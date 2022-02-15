@@ -500,6 +500,19 @@
 <span id="500">500</span>
 <span id="501">501</span>
 <span id="502">502</span>
+<span id="503">503</span>
+<span id="504">504</span>
+<span id="505">505</span>
+<span id="506">506</span>
+<span id="507">507</span>
+<span id="508">508</span>
+<span id="509">509</span>
+<span id="510">510</span>
+<span id="511">511</span>
+<span id="512">512</span>
+<span id="513">513</span>
+<span id="514">514</span>
+<span id="515">515</span>
 </pre><pre class="rust"><code><span class="comment">// Copyright 2019-2022 PureStake Inc.</span>
 <span class="comment">// This file is part of Moonbeam.</span>
 
@@ -728,6 +741,7 @@
 					<span class="ident">max_priority_fee_per_gas</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">U256</span><span class="op">&gt;</span>,
 					<span class="ident">nonce</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">U256</span><span class="op">&gt;</span>,
 					<span class="ident">estimate</span>: <span class="ident">bool</span>,
+					<span class="ident">access_list</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">Vec</span><span class="op">&lt;</span>(<span class="ident">H160</span>, <span class="ident">Vec</span><span class="op">&lt;</span><span class="ident">H256</span><span class="op">&gt;</span>)<span class="op">&gt;</span><span class="op">&gt;</span>,
 				) -&gt; <span class="prelude-ty">Result</span><span class="op">&lt;</span><span class="ident">pallet_evm::CallInfo</span>, <span class="ident">sp_runtime::DispatchError</span><span class="op">&gt;</span> {
 					<span class="kw">let</span> <span class="ident">config</span> <span class="op">=</span> <span class="kw">if</span> <span class="ident">estimate</span> {
 						<span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">config</span> <span class="op">=</span> <span class="op">&lt;</span><span class="ident">Runtime</span> <span class="kw">as</span> <span class="ident">pallet_evm::Config</span><span class="op">&gt;</span><span class="ident">::config</span>().<span class="ident">clone</span>();
@@ -760,6 +774,7 @@
 					<span class="ident">max_priority_fee_per_gas</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">U256</span><span class="op">&gt;</span>,
 					<span class="ident">nonce</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">U256</span><span class="op">&gt;</span>,
 					<span class="ident">estimate</span>: <span class="ident">bool</span>,
+					<span class="ident">access_list</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">Vec</span><span class="op">&lt;</span>(<span class="ident">H160</span>, <span class="ident">Vec</span><span class="op">&lt;</span><span class="ident">H256</span><span class="op">&gt;</span>)<span class="op">&gt;</span><span class="op">&gt;</span>,
 				) -&gt; <span class="prelude-ty">Result</span><span class="op">&lt;</span><span class="ident">pallet_evm::CreateInfo</span>, <span class="ident">sp_runtime::DispatchError</span><span class="op">&gt;</span> {
 					<span class="kw">let</span> <span class="ident">config</span> <span class="op">=</span> <span class="kw">if</span> <span class="ident">estimate</span> {
 						<span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">config</span> <span class="op">=</span> <span class="op">&lt;</span><span class="ident">Runtime</span> <span class="kw">as</span> <span class="ident">pallet_evm::Config</span><span class="op">&gt;</span><span class="ident">::config</span>().<span class="ident">clone</span>();
@@ -821,6 +836,16 @@
 				}
 			}
 
+			<span class="kw">impl</span> <span class="ident">fp_rpc::ConvertTransactionRuntimeApi</span><span class="op">&lt;</span><span class="ident">Block</span><span class="op">&gt;</span> <span class="kw">for</span> <span class="ident">Runtime</span> {
+				<span class="kw">fn</span> <span class="ident">convert_transaction</span>(
+					<span class="ident">transaction</span>: <span class="ident">pallet_ethereum::Transaction</span>
+				) -&gt; <span class="op">&lt;</span><span class="ident">Block</span> <span class="kw">as</span> <span class="ident">BlockT</span><span class="op">&gt;</span><span class="ident">::Extrinsic</span> {
+					<span class="ident">UncheckedExtrinsic::new_unsigned</span>(
+						<span class="ident">pallet_ethereum::Call</span>::<span class="op">&lt;</span><span class="ident">Runtime</span><span class="op">&gt;</span><span class="ident">::transact</span> { <span class="ident">transaction</span> }.<span class="ident">into</span>(),
+					)
+				}
+			}
+
 			<span class="kw">impl</span> <span class="ident">pallet_transaction_payment_rpc_runtime_api::TransactionPaymentApi</span><span class="op">&lt;</span><span class="ident">Block</span>, <span class="ident">Balance</span><span class="op">&gt;</span>
 			<span class="kw">for</span> <span class="ident">Runtime</span> {
 				<span class="kw">fn</span> <span class="ident">query_info</span>(
@@ -854,7 +879,6 @@
 						<span class="kw-2">&amp;</span><span class="ident">block_number</span>,
 						<span class="kw-2">&amp;</span><span class="ident">parent_header</span>.<span class="ident">hash</span>(),
 						<span class="kw-2">&amp;</span><span class="ident">parent_header</span>.<span class="ident">digest</span>,
-						<span class="ident">frame_system::InitKind::Inspection</span>
 					);
 					<span class="ident">RandomnessCollectiveFlip::on_initialize</span>(<span class="ident">block_number</span>);
 
@@ -892,8 +916,10 @@
 			}
 
 			<span class="kw">impl</span> <span class="ident">cumulus_primitives_core::CollectCollationInfo</span><span class="op">&lt;</span><span class="ident">Block</span><span class="op">&gt;</span> <span class="kw">for</span> <span class="ident">Runtime</span> {
-				<span class="kw">fn</span> <span class="ident">collect_collation_info</span>() -&gt; <span class="ident">cumulus_primitives_core::CollationInfo</span> {
-					<span class="ident">ParachainSystem::collect_collation_info</span>()
+				<span class="kw">fn</span> <span class="ident">collect_collation_info</span>(
+					<span class="ident">header</span>: <span class="kw-2">&amp;</span><span class="op">&lt;</span><span class="ident">Block</span> <span class="kw">as</span> <span class="ident">BlockT</span><span class="op">&gt;</span><span class="ident">::Header</span>
+				) -&gt; <span class="ident">cumulus_primitives_core::CollationInfo</span> {
+					<span class="ident">ParachainSystem::collect_collation_info</span>(<span class="ident">header</span>)
 				}
 			}
 

@@ -1936,6 +1936,91 @@
 <span id="1936">1936</span>
 <span id="1937">1937</span>
 <span id="1938">1938</span>
+<span id="1939">1939</span>
+<span id="1940">1940</span>
+<span id="1941">1941</span>
+<span id="1942">1942</span>
+<span id="1943">1943</span>
+<span id="1944">1944</span>
+<span id="1945">1945</span>
+<span id="1946">1946</span>
+<span id="1947">1947</span>
+<span id="1948">1948</span>
+<span id="1949">1949</span>
+<span id="1950">1950</span>
+<span id="1951">1951</span>
+<span id="1952">1952</span>
+<span id="1953">1953</span>
+<span id="1954">1954</span>
+<span id="1955">1955</span>
+<span id="1956">1956</span>
+<span id="1957">1957</span>
+<span id="1958">1958</span>
+<span id="1959">1959</span>
+<span id="1960">1960</span>
+<span id="1961">1961</span>
+<span id="1962">1962</span>
+<span id="1963">1963</span>
+<span id="1964">1964</span>
+<span id="1965">1965</span>
+<span id="1966">1966</span>
+<span id="1967">1967</span>
+<span id="1968">1968</span>
+<span id="1969">1969</span>
+<span id="1970">1970</span>
+<span id="1971">1971</span>
+<span id="1972">1972</span>
+<span id="1973">1973</span>
+<span id="1974">1974</span>
+<span id="1975">1975</span>
+<span id="1976">1976</span>
+<span id="1977">1977</span>
+<span id="1978">1978</span>
+<span id="1979">1979</span>
+<span id="1980">1980</span>
+<span id="1981">1981</span>
+<span id="1982">1982</span>
+<span id="1983">1983</span>
+<span id="1984">1984</span>
+<span id="1985">1985</span>
+<span id="1986">1986</span>
+<span id="1987">1987</span>
+<span id="1988">1988</span>
+<span id="1989">1989</span>
+<span id="1990">1990</span>
+<span id="1991">1991</span>
+<span id="1992">1992</span>
+<span id="1993">1993</span>
+<span id="1994">1994</span>
+<span id="1995">1995</span>
+<span id="1996">1996</span>
+<span id="1997">1997</span>
+<span id="1998">1998</span>
+<span id="1999">1999</span>
+<span id="2000">2000</span>
+<span id="2001">2001</span>
+<span id="2002">2002</span>
+<span id="2003">2003</span>
+<span id="2004">2004</span>
+<span id="2005">2005</span>
+<span id="2006">2006</span>
+<span id="2007">2007</span>
+<span id="2008">2008</span>
+<span id="2009">2009</span>
+<span id="2010">2010</span>
+<span id="2011">2011</span>
+<span id="2012">2012</span>
+<span id="2013">2013</span>
+<span id="2014">2014</span>
+<span id="2015">2015</span>
+<span id="2016">2016</span>
+<span id="2017">2017</span>
+<span id="2018">2018</span>
+<span id="2019">2019</span>
+<span id="2020">2020</span>
+<span id="2021">2021</span>
+<span id="2022">2022</span>
+<span id="2023">2023</span>
 </pre><pre class="rust"><code><span class="comment">// Copyright 2019-2022 PureStake Inc.</span>
 <span class="comment">// This file is part of Moonbeam.</span>
 
@@ -1976,13 +2061,14 @@
 <span class="kw">use</span> <span class="ident">frame_support</span>::{
 	<span class="ident">construct_runtime</span>, <span class="ident">parameter_types</span>,
 	<span class="ident">traits</span>::{
-		<span class="ident">Contains</span>, <span class="ident">Currency</span> <span class="kw">as</span> <span class="ident">CurrencyT</span>, <span class="ident">EqualPrivilegeOnly</span>, <span class="ident">Everything</span>, <span class="ident">FindAuthor</span>, <span class="ident">Get</span>,
-		<span class="ident">Imbalance</span>, <span class="ident">InstanceFilter</span>, <span class="ident">Nothing</span>, <span class="ident">OffchainWorker</span>, <span class="ident">OnFinalize</span>, <span class="ident">OnIdle</span>, <span class="ident">OnInitialize</span>,
+		<span class="ident">Contains</span>, <span class="ident">Currency</span> <span class="kw">as</span> <span class="ident">CurrencyT</span>, <span class="ident">EnsureOneOf</span>, <span class="ident">EqualPrivilegeOnly</span>, <span class="ident">Everything</span>, <span class="ident">FindAuthor</span>,
+		<span class="ident">Get</span>, <span class="ident">Imbalance</span>, <span class="ident">InstanceFilter</span>, <span class="ident">Nothing</span>, <span class="ident">OffchainWorker</span>, <span class="ident">OnFinalize</span>, <span class="ident">OnIdle</span>, <span class="ident">OnInitialize</span>,
 		<span class="ident">OnRuntimeUpgrade</span>, <span class="ident">OnUnbalanced</span>, <span class="ident">PalletInfo</span> <span class="kw">as</span> <span class="ident">PalletInfoTrait</span>,
 	},
 	<span class="ident">weights</span>::{
 		<span class="ident">constants</span>::{<span class="ident">RocksDbWeight</span>, <span class="ident">WEIGHT_PER_SECOND</span>},
-		<span class="ident">DispatchClass</span>, <span class="ident">GetDispatchInfo</span>, <span class="ident">IdentityFee</span>, <span class="ident">Weight</span>,
+		<span class="ident">DispatchClass</span>, <span class="ident">GetDispatchInfo</span>, <span class="ident">IdentityFee</span>, <span class="ident">Weight</span>, <span class="ident">WeightToFeeCoefficient</span>,
+		<span class="ident">WeightToFeeCoefficients</span>, <span class="ident">WeightToFeePolynomial</span>,
 	},
 	<span class="ident">PalletId</span>,
 };
@@ -1991,14 +2077,14 @@
 	<span class="ident">AccountKey20Aliases</span>, <span class="ident">AllowKnownQueryResponses</span>, <span class="ident">AllowSubscriptionsFrom</span>,
 	<span class="ident">AllowTopLevelPaidExecutionFrom</span>, <span class="ident">ConvertedConcreteAssetId</span>,
 	<span class="ident">CurrencyAdapter</span> <span class="kw">as</span> <span class="ident">XcmCurrencyAdapter</span>, <span class="ident">EnsureXcmOrigin</span>, <span class="ident">FixedWeightBounds</span>, <span class="ident">FungiblesAdapter</span>,
-	<span class="ident">IsConcrete</span>, <span class="ident">LocationInverter</span>, <span class="ident">ParentAsSuperuser</span>, <span class="ident">ParentIsDefault</span>, <span class="ident">RelayChainAsNative</span>,
+	<span class="ident">LocationInverter</span>, <span class="ident">ParentAsSuperuser</span>, <span class="ident">ParentIsDefault</span>, <span class="ident">RelayChainAsNative</span>,
 	<span class="ident">SiblingParachainAsNative</span>, <span class="ident">SiblingParachainConvertsVia</span>, <span class="ident">SignedAccountKey20AsNative</span>,
 	<span class="ident">SovereignSignedViaLocation</span>, <span class="ident">TakeWeightCredit</span>, <span class="ident">UsingComponents</span>,
 };
 
 <span class="kw">use</span> <span class="ident">xcm_executor::traits::JustTry</span>;
 
-<span class="kw">use</span> <span class="ident">frame_system</span>::{<span class="ident">EnsureOneOf</span>, <span class="ident">EnsureRoot</span>, <span class="ident">EnsureSigned</span>};
+<span class="kw">use</span> <span class="ident">frame_system</span>::{<span class="ident">EnsureRoot</span>, <span class="ident">EnsureSigned</span>};
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">moonbeam_core_primitives</span>::{
 	<span class="ident">AccountId</span>, <span class="ident">AccountIndex</span>, <span class="ident">Address</span>, <span class="ident">AssetId</span>, <span class="ident">Balance</span>, <span class="ident">BlockNumber</span>, <span class="ident">DigestItem</span>, <span class="ident">Hash</span>, <span class="ident">Header</span>,
 	<span class="ident">Index</span>, <span class="ident">Signature</span>,
@@ -2042,10 +2128,10 @@
 <span class="kw">mod</span> <span class="ident">precompiles</span>;
 <span class="kw">use</span> <span class="ident">precompiles</span>::{<span class="ident">MoonbasePrecompiles</span>, <span class="ident">ASSET_PRECOMPILE_ADDRESS_PREFIX</span>};
 
+<span class="kw">use</span> <span class="ident">smallvec::smallvec</span>;
 <span class="kw">use</span> <span class="ident">xcm_primitives</span>::{
 	<span class="ident">AccountIdToCurrencyId</span>, <span class="ident">AccountIdToMultiLocation</span>, <span class="ident">AsAssetType</span>, <span class="ident">FirstAssetTrader</span>,
-	<span class="ident">MultiNativeAsset</span>, <span class="ident">SignedToAccountId20</span>, <span class="ident">UtilityAvailableCalls</span>, <span class="ident">UtilityEncodeCall</span>,
-	<span class="ident">XcmFeesToAccount</span>, <span class="ident">XcmTransact</span>,
+	<span class="ident">MultiNativeAsset</span>, <span class="ident">SignedToAccountId20</span>, <span class="ident">UtilityAvailableCalls</span>, <span class="ident">UtilityEncodeCall</span>, <span class="ident">XcmTransact</span>,
 };
 
 <span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">any</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;std&quot;</span>, <span class="ident">test</span>))]</span>
@@ -2071,6 +2157,7 @@
 
 	<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">TRANSACTION_BYTE_FEE</span>: <span class="ident">Balance</span> <span class="op">=</span> <span class="number">10</span> <span class="op">*</span> <span class="ident">MICROUNIT</span> <span class="op">*</span> <span class="ident">SUPPLY_FACTOR</span>;
 	<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">STORAGE_BYTE_FEE</span>: <span class="ident">Balance</span> <span class="op">=</span> <span class="number">100</span> <span class="op">*</span> <span class="ident">MICROUNIT</span> <span class="op">*</span> <span class="ident">SUPPLY_FACTOR</span>;
+	<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">WEIGHT_FEE</span>: <span class="ident">Balance</span> <span class="op">=</span> <span class="number">50</span> <span class="op">*</span> <span class="ident">KILOWEI</span> <span class="op">*</span> <span class="ident">SUPPLY_FACTOR</span>;
 
 	<span class="kw">pub</span> <span class="kw">const</span> <span class="kw">fn</span> <span class="ident">deposit</span>(<span class="ident">items</span>: <span class="ident">u32</span>, <span class="ident">bytes</span>: <span class="ident">u32</span>) -&gt; <span class="ident">Balance</span> {
 		<span class="ident">items</span> <span class="kw">as</span> <span class="ident">Balance</span> <span class="op">*</span> <span class="number">1</span> <span class="op">*</span> <span class="ident">UNIT</span> <span class="op">*</span> <span class="ident">SUPPLY_FACTOR</span> <span class="op">+</span> (<span class="ident">bytes</span> <span class="kw">as</span> <span class="ident">Balance</span>) <span class="op">*</span> <span class="ident">STORAGE_BYTE_FEE</span>
@@ -2111,10 +2198,11 @@
 	<span class="ident">spec_name</span>: <span class="macro">create_runtime_str!</span>(<span class="string">&quot;moonbase&quot;</span>),
 	<span class="ident">impl_name</span>: <span class="macro">create_runtime_str!</span>(<span class="string">&quot;moonbase&quot;</span>),
 	<span class="ident">authoring_version</span>: <span class="number">3</span>,
-	<span class="ident">spec_version</span>: <span class="number">1100</span>,
+	<span class="ident">spec_version</span>: <span class="number">1200</span>,
 	<span class="ident">impl_version</span>: <span class="number">0</span>,
 	<span class="ident">apis</span>: <span class="ident">RUNTIME_API_VERSIONS</span>,
 	<span class="ident">transaction_version</span>: <span class="number">2</span>,
+	<span class="ident">state_version</span>: <span class="number">0</span>,
 };
 
 <span class="doccomment">/// The version information used to identify this runtime when compiled natively.</span>
@@ -2180,6 +2268,7 @@
 	<span class="doccomment">/// This is used as an identifier of the chain. 42 is the generic substrate prefix.</span>
 	<span class="kw">type</span> <span class="ident">SS58Prefix</span> <span class="op">=</span> <span class="ident">SS58Prefix</span>;
 	<span class="kw">type</span> <span class="ident">OnSetCode</span> <span class="op">=</span> <span class="ident">cumulus_pallet_parachain_system::ParachainSetCode</span><span class="op">&lt;</span><span class="self">Self</span><span class="op">&gt;</span>;
+	<span class="kw">type</span> <span class="ident">MaxConsumers</span> <span class="op">=</span> <span class="ident">frame_support::traits::ConstU32</span><span class="op">&lt;</span><span class="number">16</span><span class="op">&gt;</span>;
 }
 
 <span class="kw">impl</span> <span class="ident">pallet_utility::Config</span> <span class="kw">for</span> <span class="ident">Runtime</span> {
@@ -2251,6 +2340,28 @@
 <span class="macro">parameter_types!</span> {
 	<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">TransactionByteFee</span>: <span class="ident">Balance</span> <span class="op">=</span> <span class="ident">currency::TRANSACTION_BYTE_FEE</span>;
 	<span class="kw">pub</span> <span class="ident">OperationalFeeMultiplier</span>: <span class="ident">u8</span> <span class="op">=</span> <span class="number">5</span>;
+}
+
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">WeightToFee</span>;
+<span class="kw">impl</span> <span class="ident">WeightToFeePolynomial</span> <span class="kw">for</span> <span class="ident">WeightToFee</span> {
+	<span class="kw">type</span> <span class="ident">Balance</span> <span class="op">=</span> <span class="ident">Balance</span>;
+
+	<span class="doccomment">/// Return a vec of coefficients. Here we just use one coefficient and reduce it to a constant</span>
+	<span class="doccomment">/// modifier in order to closely match Ethereum-based fees.</span>
+	<span class="doccomment">///</span>
+	<span class="doccomment">/// Calculation, per the documentation in `frame_support`:</span>
+	<span class="doccomment">///</span>
+	<span class="doccomment">/// ```ignore</span>
+	<span class="doccomment">/// coeff_integer * x^(degree) + coeff_frac * x^(degree)</span>
+	<span class="doccomment">/// ```</span>
+	<span class="kw">fn</span> <span class="ident">polynomial</span>() -&gt; <span class="ident">WeightToFeeCoefficients</span><span class="op">&lt;</span><span class="ident"><span class="self">Self</span>::Balance</span><span class="op">&gt;</span> {
+		<span class="macro">smallvec!</span>[<span class="ident">WeightToFeeCoefficient</span> {
+			<span class="ident">degree</span>: <span class="number">1</span>,
+			<span class="ident">coeff_frac</span>: <span class="ident">Perbill::zero</span>(),
+			<span class="ident">coeff_integer</span>: <span class="ident">currency::WEIGHT_FEE</span>,
+			<span class="ident">negative</span>: <span class="bool-val">false</span>,
+		}]
+	}
 }
 
 <span class="kw">impl</span> <span class="ident">pallet_transaction_payment::Config</span> <span class="kw">for</span> <span class="ident">Runtime</span> {
@@ -2413,7 +2524,7 @@
 }
 
 <span class="kw">impl</span> <span class="ident">pallet_evm::Config</span> <span class="kw">for</span> <span class="ident">Runtime</span> {
-	<span class="kw">type</span> <span class="ident">FeeCalculator</span> <span class="op">=</span> <span class="ident">BaseFee</span>;
+	<span class="kw">type</span> <span class="ident">FeeCalculator</span> <span class="op">=</span> <span class="ident">FixedGasPrice</span>;
 	<span class="kw">type</span> <span class="ident">GasWeightMapping</span> <span class="op">=</span> <span class="ident">MoonbeamGasWeightMapping</span>;
 	<span class="kw">type</span> <span class="ident">BlockHashMapping</span> <span class="op">=</span> <span class="ident">pallet_ethereum::EthereumBlockHashMapping</span><span class="op">&lt;</span><span class="self">Self</span><span class="op">&gt;</span>;
 	<span class="kw">type</span> <span class="ident">CallOrigin</span> <span class="op">=</span> <span class="ident">EnsureAddressRoot</span><span class="op">&lt;</span><span class="ident">AccountId</span><span class="op">&gt;</span>;
@@ -2445,6 +2556,8 @@
 	<span class="kw">type</span> <span class="ident">MaxScheduledPerBlock</span> <span class="op">=</span> <span class="ident">MaxScheduledPerBlock</span>;
 	<span class="kw">type</span> <span class="ident">WeightInfo</span> <span class="op">=</span> <span class="ident">pallet_scheduler::weights::SubstrateWeight</span><span class="op">&lt;</span><span class="ident">Runtime</span><span class="op">&gt;</span>;
 	<span class="kw">type</span> <span class="ident">OriginPrivilegeCmp</span> <span class="op">=</span> <span class="ident">EqualPrivilegeOnly</span>;
+	<span class="kw">type</span> <span class="ident">PreimageProvider</span> <span class="op">=</span> ();
+	<span class="kw">type</span> <span class="ident">NoPreimagePostponement</span> <span class="op">=</span> ();
 }
 
 <span class="macro">parameter_types!</span> {
@@ -2531,13 +2644,11 @@
 		<span class="ident">pallet_collective::EnsureProportionAtLeast</span><span class="op">&lt;</span><span class="ident">_3</span>, <span class="ident">_5</span>, <span class="ident">AccountId</span>, <span class="ident">TechCommitteeInstance</span><span class="op">&gt;</span>;
 	<span class="comment">// To cancel a proposal which has been passed.</span>
 	<span class="kw">type</span> <span class="ident">CancellationOrigin</span> <span class="op">=</span> <span class="ident">EnsureOneOf</span><span class="op">&lt;</span>
-		<span class="ident">AccountId</span>,
 		<span class="ident">EnsureRoot</span><span class="op">&lt;</span><span class="ident">AccountId</span><span class="op">&gt;</span>,
 		<span class="ident">pallet_collective::EnsureProportionAtLeast</span><span class="op">&lt;</span><span class="ident">_3</span>, <span class="ident">_5</span>, <span class="ident">AccountId</span>, <span class="ident">CouncilInstance</span><span class="op">&gt;</span>,
 	<span class="op">&gt;</span>;
 	<span class="comment">// To cancel a proposal before it has been passed.</span>
 	<span class="kw">type</span> <span class="ident">CancelProposalOrigin</span> <span class="op">=</span> <span class="ident">EnsureOneOf</span><span class="op">&lt;</span>
-		<span class="ident">AccountId</span>,
 		<span class="ident">EnsureRoot</span><span class="op">&lt;</span><span class="ident">AccountId</span><span class="op">&gt;</span>,
 		<span class="ident">pallet_collective::EnsureProportionAtLeast</span><span class="op">&lt;</span><span class="ident">_3</span>, <span class="ident">_5</span>, <span class="ident">AccountId</span>, <span class="ident">TechCommitteeInstance</span><span class="op">&gt;</span>,
 	<span class="op">&gt;</span>;
@@ -2566,13 +2677,11 @@
 }
 
 <span class="kw">type</span> <span class="ident">TreasuryApproveOrigin</span> <span class="op">=</span> <span class="ident">EnsureOneOf</span><span class="op">&lt;</span>
-	<span class="ident">AccountId</span>,
 	<span class="ident">EnsureRoot</span><span class="op">&lt;</span><span class="ident">AccountId</span><span class="op">&gt;</span>,
 	<span class="ident">pallet_collective::EnsureProportionAtLeast</span><span class="op">&lt;</span><span class="ident">_3</span>, <span class="ident">_5</span>, <span class="ident">AccountId</span>, <span class="ident">CouncilInstance</span><span class="op">&gt;</span>,
 <span class="op">&gt;</span>;
 
 <span class="kw">type</span> <span class="ident">TreasuryRejectOrigin</span> <span class="op">=</span> <span class="ident">EnsureOneOf</span><span class="op">&lt;</span>
-	<span class="ident">AccountId</span>,
 	<span class="ident">EnsureRoot</span><span class="op">&lt;</span><span class="ident">AccountId</span><span class="op">&gt;</span>,
 	<span class="ident">pallet_collective::EnsureProportionMoreThan</span><span class="op">&lt;</span><span class="ident">_1</span>, <span class="ident">_2</span>, <span class="ident">AccountId</span>, <span class="ident">CouncilInstance</span><span class="op">&gt;</span>,
 <span class="op">&gt;</span>;
@@ -2595,6 +2704,7 @@
 	<span class="kw">type</span> <span class="ident">MaxApprovals</span> <span class="op">=</span> <span class="ident">MaxApprovals</span>;
 	<span class="kw">type</span> <span class="ident">WeightInfo</span> <span class="op">=</span> <span class="ident">pallet_treasury::weights::SubstrateWeight</span><span class="op">&lt;</span><span class="ident">Runtime</span><span class="op">&gt;</span>;
 	<span class="kw">type</span> <span class="ident">SpendFunds</span> <span class="op">=</span> ();
+	<span class="kw">type</span> <span class="ident">ProposalBondMaximum</span> <span class="op">=</span> ();
 }
 
 <span class="macro">parameter_types!</span> {
@@ -2610,12 +2720,10 @@
 }
 
 <span class="kw">type</span> <span class="ident">IdentityForceOrigin</span> <span class="op">=</span> <span class="ident">EnsureOneOf</span><span class="op">&lt;</span>
-	<span class="ident">AccountId</span>,
 	<span class="ident">EnsureRoot</span><span class="op">&lt;</span><span class="ident">AccountId</span><span class="op">&gt;</span>,
 	<span class="ident">pallet_collective::EnsureProportionMoreThan</span><span class="op">&lt;</span><span class="ident">_1</span>, <span class="ident">_2</span>, <span class="ident">AccountId</span>, <span class="ident">CouncilInstance</span><span class="op">&gt;</span>,
 <span class="op">&gt;</span>;
 <span class="kw">type</span> <span class="ident">IdentityRegistrarOrigin</span> <span class="op">=</span> <span class="ident">EnsureOneOf</span><span class="op">&lt;</span>
-	<span class="ident">AccountId</span>,
 	<span class="ident">EnsureRoot</span><span class="op">&lt;</span><span class="ident">AccountId</span><span class="op">&gt;</span>,
 	<span class="ident">pallet_collective::EnsureProportionMoreThan</span><span class="op">&lt;</span><span class="ident">_1</span>, <span class="ident">_2</span>, <span class="ident">AccountId</span>, <span class="ident">CouncilInstance</span><span class="op">&gt;</span>,
 <span class="op">&gt;</span>;
@@ -2671,7 +2779,7 @@
 
 <span class="kw">impl</span> <span class="ident">cumulus_pallet_parachain_system::Config</span> <span class="kw">for</span> <span class="ident">Runtime</span> {
 	<span class="kw">type</span> <span class="ident">Event</span> <span class="op">=</span> <span class="ident">Event</span>;
-	<span class="kw">type</span> <span class="ident">OnValidationData</span> <span class="op">=</span> ();
+	<span class="kw">type</span> <span class="ident">OnSystemEvent</span> <span class="op">=</span> ();
 	<span class="kw">type</span> <span class="ident">SelfParaId</span> <span class="op">=</span> <span class="ident">ParachainInfo</span>;
 	<span class="kw">type</span> <span class="ident">DmpMessageHandler</span> <span class="op">=</span> <span class="ident">MaintenanceMode</span>;
 	<span class="kw">type</span> <span class="ident">ReservedDmpWeight</span> <span class="op">=</span> <span class="ident">ReservedDmpWeight</span>;
@@ -2701,8 +2809,10 @@
 	<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">RewardPaymentDelay</span>: <span class="ident">u32</span> <span class="op">=</span> <span class="number">2</span>;
 	<span class="doccomment">/// Minimum collators selected per round, default at genesis and minimum forever after</span>
 	<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">MinSelectedCandidates</span>: <span class="ident">u32</span> <span class="op">=</span> <span class="number">8</span>;
-	<span class="doccomment">/// Maximum delegators counted per candidate</span>
-	<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">MaxDelegatorsPerCandidate</span>: <span class="ident">u32</span> <span class="op">=</span> <span class="number">300</span>;
+	<span class="doccomment">/// Maximum top delegations per candidate</span>
+	<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">MaxTopDelegationsPerCandidate</span>: <span class="ident">u32</span> <span class="op">=</span> <span class="number">300</span>;
+	<span class="doccomment">/// Maximum bottom delegations per candidate</span>
+	<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">MaxBottomDelegationsPerCandidate</span>: <span class="ident">u32</span> <span class="op">=</span> <span class="number">50</span>;
 	<span class="doccomment">/// Maximum delegations per delegator</span>
 	<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">MaxDelegationsPerDelegator</span>: <span class="ident">u32</span> <span class="op">=</span> <span class="number">100</span>;
 	<span class="doccomment">/// Default fixed percent a collator takes off the top of due rewards</span>
@@ -2730,7 +2840,8 @@
 	<span class="kw">type</span> <span class="ident">DelegationBondLessDelay</span> <span class="op">=</span> <span class="ident">DelegationBondLessDelay</span>;
 	<span class="kw">type</span> <span class="ident">RewardPaymentDelay</span> <span class="op">=</span> <span class="ident">RewardPaymentDelay</span>;
 	<span class="kw">type</span> <span class="ident">MinSelectedCandidates</span> <span class="op">=</span> <span class="ident">MinSelectedCandidates</span>;
-	<span class="kw">type</span> <span class="ident">MaxDelegatorsPerCandidate</span> <span class="op">=</span> <span class="ident">MaxDelegatorsPerCandidate</span>;
+	<span class="kw">type</span> <span class="ident">MaxTopDelegationsPerCandidate</span> <span class="op">=</span> <span class="ident">MaxTopDelegationsPerCandidate</span>;
+	<span class="kw">type</span> <span class="ident">MaxBottomDelegationsPerCandidate</span> <span class="op">=</span> <span class="ident">MaxBottomDelegationsPerCandidate</span>;
 	<span class="kw">type</span> <span class="ident">MaxDelegationsPerDelegator</span> <span class="op">=</span> <span class="ident">MaxDelegationsPerDelegator</span>;
 	<span class="kw">type</span> <span class="ident">DefaultCollatorCommission</span> <span class="op">=</span> <span class="ident">DefaultCollatorCommission</span>;
 	<span class="kw">type</span> <span class="ident">DefaultParachainBondReservePercent</span> <span class="op">=</span> <span class="ident">DefaultParachainBondReservePercent</span>;
@@ -2908,11 +3019,18 @@
 <span class="kw">impl</span> <span class="ident">pallet_migrations::Config</span> <span class="kw">for</span> <span class="ident">Runtime</span> {
 	<span class="kw">type</span> <span class="ident">Event</span> <span class="op">=</span> <span class="ident">Event</span>;
 	<span class="comment">//TODO wire up our correct list of migrations here. Maybe this shouldn&#39;t be in `runtime_common`.</span>
-	<span class="kw">type</span> <span class="ident">MigrationsList</span> <span class="op">=</span> <span class="ident">runtime_common::migrations::CommonMigrations</span><span class="op">&lt;</span>
-		<span class="ident">Runtime</span>,
-		<span class="ident">CouncilCollective</span>,
-		<span class="ident">TechCommitteeCollective</span>,
-	<span class="op">&gt;</span>;
+	<span class="kw">type</span> <span class="ident">MigrationsList</span> <span class="op">=</span> (
+		<span class="ident">runtime_common::migrations::CommonMigrations</span><span class="op">&lt;</span>
+			<span class="ident">Runtime</span>,
+			<span class="ident">CouncilCollective</span>,
+			<span class="ident">TechCommitteeCollective</span>,
+		<span class="op">&gt;</span>,
+		<span class="ident">runtime_common::migrations::XcmMigrations</span><span class="op">&lt;</span>
+			<span class="ident">Runtime</span>,
+			<span class="ident">StatemintParaId</span>,
+			<span class="ident">StatemintAssetPalletInstance</span>,
+		<span class="op">&gt;</span>,
+	);
 }
 
 <span class="macro">parameter_types!</span> {
@@ -2922,16 +3040,36 @@
 	<span class="kw">pub</span> <span class="ident">RelayChainOrigin</span>: <span class="ident">Origin</span> <span class="op">=</span> <span class="ident">cumulus_pallet_xcm::Origin::Relay</span>.<span class="ident">into</span>();
 	<span class="comment">// The ancestry, defines the multilocation describing this consensus system</span>
 	<span class="kw">pub</span> <span class="ident">Ancestry</span>: <span class="ident">MultiLocation</span> <span class="op">=</span> <span class="ident">Parachain</span>(<span class="ident">ParachainInfo::parachain_id</span>().<span class="ident">into</span>()).<span class="ident">into</span>();
-	<span class="comment">// Self Reserve location, defines the multilocation identifiying the self-reserve currency</span>
+	<span class="comment">// Old Self Reserve location, defines the multilocation identifiying the self-reserve currency</span>
 	<span class="comment">// This is used to match it against our Balances pallet when we receive such a MultiLocation</span>
 	<span class="comment">// (Parent, Self Para Id, Self Balances pallet index)</span>
-	<span class="kw">pub</span> <span class="ident">SelfReserve</span>: <span class="ident">MultiLocation</span> <span class="op">=</span> <span class="ident">MultiLocation</span> {
+	<span class="comment">// This is the old anchoring way</span>
+	<span class="kw">pub</span> <span class="ident">OldAnchoringSelfReserve</span>: <span class="ident">MultiLocation</span> <span class="op">=</span> <span class="ident">MultiLocation</span> {
 		<span class="ident">parents</span>:<span class="number">1</span>,
 		<span class="ident">interior</span>: <span class="ident">Junctions::X2</span>(
 			<span class="ident">Parachain</span>(<span class="ident">ParachainInfo::parachain_id</span>().<span class="ident">into</span>()),
+			<span class="ident">PalletInstance</span>(
+				<span class="op">&lt;</span><span class="ident">Runtime</span> <span class="kw">as</span> <span class="ident">frame_system::Config</span><span class="op">&gt;</span><span class="ident">::PalletInfo::index</span>::<span class="op">&lt;</span><span class="ident">Balances</span><span class="op">&gt;</span>().<span class="ident">unwrap</span>() <span class="kw">as</span> <span class="ident">u8</span>
+			)
+		)
+	};
+	<span class="comment">// Bew Self Reserve location, defines the multilocation identifiying the self-reserve currency</span>
+	<span class="comment">// This is used to match it also against our Balances pallet when we receive such</span>
+	<span class="comment">// a MultiLocation: (Self Balances pallet index)</span>
+	<span class="comment">// This is the new anchoring way</span>
+	<span class="kw">pub</span> <span class="ident">NewAnchoringSelfReserve</span>: <span class="ident">MultiLocation</span> <span class="op">=</span> <span class="ident">MultiLocation</span> {
+		<span class="ident">parents</span>:<span class="number">0</span>,
+		<span class="ident">interior</span>: <span class="ident">Junctions::X1</span>(
 			<span class="ident">PalletInstance</span>(<span class="op">&lt;</span><span class="ident">Runtime</span> <span class="kw">as</span> <span class="ident">frame_system::Config</span><span class="op">&gt;</span><span class="ident">::PalletInfo::index</span>::<span class="op">&lt;</span><span class="ident">Balances</span><span class="op">&gt;</span>().<span class="ident">unwrap</span>() <span class="kw">as</span> <span class="ident">u8</span>)
 		)
 	};
+
+	<span class="comment">// The Locations we accept to refer to our own currency. We need to support both pre and</span>
+	<span class="comment">// post 0.9.16 versions, hence the reason for this being a Vec</span>
+	<span class="kw">pub</span> <span class="ident">SelfReserveRepresentations</span>: <span class="ident">Vec</span><span class="op">&lt;</span><span class="ident">MultiLocation</span><span class="op">&gt;</span> <span class="op">=</span> <span class="macro">vec!</span>[
+		<span class="ident">OldAnchoringSelfReserve::get</span>(),
+		<span class="ident">NewAnchoringSelfReserve::get</span>()
+	];
 }
 
 <span class="doccomment">/// Type for specifying how a `MultiLocation` can be converted into an `AccountId`. This is used</span>
@@ -2974,8 +3112,9 @@
 <span class="kw">pub</span> <span class="kw">type</span> <span class="ident">LocalAssetTransactor</span> <span class="op">=</span> <span class="ident">XcmCurrencyAdapter</span><span class="op">&lt;</span>
 	<span class="comment">// Use this currency:</span>
 	<span class="ident">Balances</span>,
-	<span class="comment">// Use this currency when it is a fungible asset matching the given location or name:</span>
-	<span class="ident">IsConcrete</span><span class="op">&lt;</span><span class="ident">SelfReserve</span><span class="op">&gt;</span>,
+	<span class="comment">// Use this currency when it is a fungible asset matching any of the locations in</span>
+	<span class="comment">// SelfReserveRepresentations</span>
+	<span class="ident">xcm_primitives::MultiIsConcrete</span><span class="op">&lt;</span><span class="ident">SelfReserveRepresentations</span><span class="op">&gt;</span>,
 	<span class="comment">// We can convert the MultiLocations with our converter above:</span>
 	<span class="ident">LocationToAccountId</span>,
 	<span class="comment">// Our chain&#39;s account ID type (we can&#39;t get away without mentioning it explicitly):</span>
@@ -2983,8 +3122,7 @@
 	<span class="comment">// We dont allow teleport</span>
 	(),
 <span class="op">&gt;</span>;
-
-<span class="comment">// We use both transactors</span>
+<span class="comment">// We use all transactors</span>
 <span class="kw">pub</span> <span class="kw">type</span> <span class="ident">AssetTransactors</span> <span class="op">=</span> (<span class="ident">LocalAssetTransactor</span>, <span class="ident">FungiblesTransactor</span>);
 
 <span class="doccomment">/// This is the type we use to convert an (incoming) XCM origin into a local `Origin` instance,</span>
@@ -3043,7 +3181,7 @@
 <span class="doccomment">/// This is the struct that will handle the revenue from xcm fees</span>
 <span class="doccomment">/// We do not burn anything because we want to mimic exactly what</span>
 <span class="doccomment">/// the sovereign account has</span>
-<span class="kw">pub</span> <span class="kw">type</span> <span class="ident">XcmFeesToAccount_</span> <span class="op">=</span> <span class="ident">XcmFeesToAccount</span><span class="op">&lt;</span>
+<span class="kw">pub</span> <span class="kw">type</span> <span class="ident">XcmFeesToAccount</span> <span class="op">=</span> <span class="ident">xcm_primitives::XcmFeesToAccount</span><span class="op">&lt;</span>
 	<span class="ident">Assets</span>,
 	(
 		<span class="ident">ConvertedConcreteAssetId</span><span class="op">&lt;</span>
@@ -3070,19 +3208,27 @@
 	<span class="kw">type</span> <span class="ident">LocationInverter</span> <span class="op">=</span> <span class="ident">LocationInverter</span><span class="op">&lt;</span><span class="ident">Ancestry</span><span class="op">&gt;</span>;
 	<span class="kw">type</span> <span class="ident">Barrier</span> <span class="op">=</span> <span class="ident">XcmBarrier</span>;
 	<span class="kw">type</span> <span class="ident">Weigher</span> <span class="op">=</span> <span class="ident">XcmWeigher</span>;
-	<span class="comment">// We use two traders</span>
-	<span class="comment">// When we receive the self-reserve asset, we use pallet-transaction-payment</span>
+	<span class="comment">// We use three traders</span>
+	<span class="comment">// When we receive either representation of the self-reserve asset,</span>
+	<span class="comment">// we use UsingComponents and the local way of handling fees</span>
 	<span class="comment">// When we receive a non-reserve asset, we use AssetManager to fetch how many</span>
 	<span class="comment">// units per second we should charge</span>
 	<span class="kw">type</span> <span class="ident">Trader</span> <span class="op">=</span> (
 		<span class="ident">UsingComponents</span><span class="op">&lt;</span>
-			<span class="ident">IdentityFee</span><span class="op">&lt;</span><span class="ident">Balance</span><span class="op">&gt;</span>,
-			<span class="ident">SelfReserve</span>,
+			<span class="ident">WeightToFee</span>,
+			<span class="ident">OldAnchoringSelfReserve</span>,
 			<span class="ident">AccountId</span>,
 			<span class="ident">Balances</span>,
 			<span class="ident">DealWithFees</span><span class="op">&lt;</span><span class="ident">Runtime</span><span class="op">&gt;</span>,
 		<span class="op">&gt;</span>,
-		<span class="ident">FirstAssetTrader</span><span class="op">&lt;</span><span class="ident">AssetId</span>, <span class="ident">AssetType</span>, <span class="ident">AssetManager</span>, <span class="ident">XcmFeesToAccount_</span><span class="op">&gt;</span>,
+		<span class="ident">UsingComponents</span><span class="op">&lt;</span>
+			<span class="ident">WeightToFee</span>,
+			<span class="ident">NewAnchoringSelfReserve</span>,
+			<span class="ident">AccountId</span>,
+			<span class="ident">Balances</span>,
+			<span class="ident">DealWithFees</span><span class="op">&lt;</span><span class="ident">Runtime</span><span class="op">&gt;</span>,
+		<span class="op">&gt;</span>,
+		<span class="ident">FirstAssetTrader</span><span class="op">&lt;</span><span class="ident">AssetType</span>, <span class="ident">AssetManager</span>, <span class="ident">XcmFeesToAccount</span><span class="op">&gt;</span>,
 	);
 	<span class="kw">type</span> <span class="ident">ResponseHandler</span> <span class="op">=</span> <span class="ident">PolkadotXcm</span>;
 	<span class="kw">type</span> <span class="ident">SubscriptionService</span> <span class="op">=</span> <span class="ident">PolkadotXcm</span>;
@@ -3135,6 +3281,7 @@
 	<span class="kw">type</span> <span class="ident">XcmExecutor</span> <span class="op">=</span> <span class="ident">XcmExecutor</span>;
 	<span class="kw">type</span> <span class="ident">ChannelInfo</span> <span class="op">=</span> <span class="ident">ParachainSystem</span>;
 	<span class="kw">type</span> <span class="ident">VersionWrapper</span> <span class="op">=</span> <span class="ident">PolkadotXcm</span>;
+	<span class="kw">type</span> <span class="ident">ExecuteOverweightOrigin</span> <span class="op">=</span> <span class="ident">EnsureRoot</span><span class="op">&lt;</span><span class="ident">AccountId</span><span class="op">&gt;</span>;
 }
 
 <span class="kw">impl</span> <span class="ident">cumulus_pallet_dmp_queue::Config</span> <span class="kw">for</span> <span class="ident">Runtime</span> {
@@ -3152,11 +3299,11 @@
 	<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">MetadataDepositBase</span>: <span class="ident">Balance</span> <span class="op">=</span> <span class="number">0</span>;
 	<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">MetadataDepositPerByte</span>: <span class="ident">Balance</span> <span class="op">=</span> <span class="number">0</span>;
 	<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">ExecutiveBody</span>: <span class="ident">BodyId</span> <span class="op">=</span> <span class="ident">BodyId::Executive</span>;
+	<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">AssetAccountDeposit</span>: <span class="ident">Balance</span> <span class="op">=</span> <span class="ident">currency::deposit</span>(<span class="number">1</span>, <span class="number">18</span>);
 }
 
 <span class="doccomment">/// We allow root and Chain council to execute privileged asset operations.</span>
 <span class="kw">pub</span> <span class="kw">type</span> <span class="ident">AssetsForceOrigin</span> <span class="op">=</span> <span class="ident">EnsureOneOf</span><span class="op">&lt;</span>
-	<span class="ident">AccountId</span>,
 	<span class="ident">EnsureRoot</span><span class="op">&lt;</span><span class="ident">AccountId</span><span class="op">&gt;</span>,
 	<span class="ident">pallet_collective::EnsureProportionMoreThan</span><span class="op">&lt;</span><span class="ident">_1</span>, <span class="ident">_2</span>, <span class="ident">AccountId</span>, <span class="ident">CouncilInstance</span><span class="op">&gt;</span>,
 <span class="op">&gt;</span>;
@@ -3174,9 +3321,16 @@
 	<span class="kw">type</span> <span class="ident">StringLimit</span> <span class="op">=</span> <span class="ident">AssetsStringLimit</span>;
 	<span class="kw">type</span> <span class="ident">Freezer</span> <span class="op">=</span> ();
 	<span class="kw">type</span> <span class="ident">Extra</span> <span class="op">=</span> ();
+	<span class="kw">type</span> <span class="ident">AssetAccountDeposit</span> <span class="op">=</span> <span class="ident">AssetAccountDeposit</span>;
 	<span class="kw">type</span> <span class="ident">WeightInfo</span> <span class="op">=</span> <span class="ident">pallet_assets::weights::SubstrateWeight</span><span class="op">&lt;</span><span class="ident">Runtime</span><span class="op">&gt;</span>;
 }
 
+<span class="macro">parameter_types!</span> {
+	<span class="comment">// Statemint ParaId in Alphanet</span>
+	<span class="kw">pub</span> <span class="ident">StatemintParaId</span>: <span class="ident">u32</span> <span class="op">=</span> <span class="number">1001</span>;
+	<span class="comment">// Assets Pallet instance in Statemint alphanet</span>
+	<span class="kw">pub</span> <span class="ident">StatemintAssetPalletInstance</span>: <span class="ident">u8</span> <span class="op">=</span> <span class="number">50</span>;
+}
 <span class="comment">// Our AssetType. For now we only handle Xcm Assets</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Clone</span>, <span class="ident">Eq</span>, <span class="ident">Debug</span>, <span class="ident">PartialEq</span>, <span class="ident">Ord</span>, <span class="ident">PartialOrd</span>, <span class="ident">Encode</span>, <span class="ident">Decode</span>, <span class="ident">TypeInfo</span>)]</span>
 <span class="kw">pub</span> <span class="kw">enum</span> <span class="ident">AssetType</span> {
@@ -3190,7 +3344,23 @@
 
 <span class="kw">impl</span> <span class="ident">From</span><span class="op">&lt;</span><span class="ident">MultiLocation</span><span class="op">&gt;</span> <span class="kw">for</span> <span class="ident">AssetType</span> {
 	<span class="kw">fn</span> <span class="ident">from</span>(<span class="ident">location</span>: <span class="ident">MultiLocation</span>) -&gt; <span class="self">Self</span> {
-		<span class="ident"><span class="self">Self</span>::Xcm</span>(<span class="ident">location</span>)
+		<span class="kw">match</span> <span class="ident">location</span> {
+			<span class="comment">// Change https://github.com/paritytech/cumulus/pull/831</span>
+			<span class="comment">// This avoids interrumption once they upgrade</span>
+			<span class="comment">// We map the previous location to the new one so that the assetId is well retrieved</span>
+			<span class="ident">MultiLocation</span> {
+				<span class="ident">parents</span>: <span class="number">1</span>,
+				<span class="ident">interior</span>: <span class="ident">X2</span>(<span class="ident">Parachain</span>(<span class="ident">id</span>), <span class="ident">GeneralIndex</span>(<span class="ident">index</span>)),
+			} <span class="kw">if</span> <span class="ident">id</span> <span class="op">==</span> <span class="ident">StatemintParaId::get</span>() =&gt; <span class="ident"><span class="self">Self</span>::Xcm</span>(<span class="ident">MultiLocation</span> {
+				<span class="ident">parents</span>: <span class="number">1</span>,
+				<span class="ident">interior</span>: <span class="ident">X3</span>(
+					<span class="ident">Parachain</span>(<span class="ident">id</span>),
+					<span class="ident">PalletInstance</span>(<span class="ident">StatemintAssetPalletInstance::get</span>()),
+					<span class="ident">GeneralIndex</span>(<span class="ident">index</span>),
+				),
+			}),
+			<span class="kw">_</span> =&gt; <span class="ident"><span class="self">Self</span>::Xcm</span>(<span class="ident">location</span>),
+		}
 	}
 }
 
@@ -3203,7 +3373,7 @@
 }
 
 <span class="comment">// Implementation on how to retrieve the AssetId from an AssetType</span>
-<span class="comment">// We simply hash the AssetType and take the lowest 128 bits</span>
+<span class="comment">// We take it</span>
 <span class="kw">impl</span> <span class="ident">From</span><span class="op">&lt;</span><span class="ident">AssetType</span><span class="op">&gt;</span> <span class="kw">for</span> <span class="ident">AssetId</span> {
 	<span class="kw">fn</span> <span class="ident">from</span>(<span class="ident">asset</span>: <span class="ident">AssetType</span>) -&gt; <span class="ident">AssetId</span> {
 		<span class="kw">match</span> <span class="ident">asset</span> {
@@ -3306,8 +3476,13 @@
 {
 	<span class="kw">fn</span> <span class="ident">convert</span>(<span class="ident">currency</span>: <span class="ident">CurrencyId</span>) -&gt; <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">MultiLocation</span><span class="op">&gt;</span> {
 		<span class="kw">match</span> <span class="ident">currency</span> {
+			<span class="comment">// For now (and until we upgrade to 0.9.16 is adapted) we need to use the old anchoring</span>
+			<span class="comment">// here</span>
+			<span class="comment">// This is not a problem in either cases, since the view of the destination chain</span>
+			<span class="comment">// does not change</span>
+			<span class="comment">// TODO! change this to NewAnchoringSelfReserve once we uprade to 0.9.16</span>
 			<span class="ident">CurrencyId::SelfReserve</span> =&gt; {
-				<span class="kw">let</span> <span class="ident">multi</span>: <span class="ident">MultiLocation</span> <span class="op">=</span> <span class="ident">SelfReserve::get</span>();
+				<span class="kw">let</span> <span class="ident">multi</span>: <span class="ident">MultiLocation</span> <span class="op">=</span> <span class="ident">OldAnchoringSelfReserve::get</span>();
 				<span class="prelude-val">Some</span>(<span class="ident">multi</span>)
 			}
 			<span class="ident">CurrencyId::OtherReserve</span>(<span class="ident">asset</span>) =&gt; <span class="ident">AssetXConverter::reverse_ref</span>(<span class="ident">asset</span>).<span class="ident">ok</span>(),
@@ -3317,6 +3492,8 @@
 
 <span class="macro">parameter_types!</span> {
 	<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">BaseXcmWeight</span>: <span class="ident">Weight</span> <span class="op">=</span> <span class="number">100_000_000</span>;
+	<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">MaxAssetsForTransfer</span>: <span class="ident">usize</span> <span class="op">=</span> <span class="number">2</span>;
+
 	<span class="comment">// This is how we are going to detect whether the asset is a Reserve asset</span>
 	<span class="comment">// This however is the chain part only</span>
 	<span class="kw">pub</span> <span class="ident">SelfLocation</span>: <span class="ident">MultiLocation</span> <span class="op">=</span> <span class="ident">MultiLocation</span> {
@@ -3339,6 +3516,7 @@
 	<span class="kw">type</span> <span class="ident">Weigher</span> <span class="op">=</span> <span class="ident">XcmWeigher</span>;
 	<span class="kw">type</span> <span class="ident">BaseXcmWeight</span> <span class="op">=</span> <span class="ident">BaseXcmWeight</span>;
 	<span class="kw">type</span> <span class="ident">LocationInverter</span> <span class="op">=</span> <span class="ident">LocationInverter</span><span class="op">&lt;</span><span class="ident">Ancestry</span><span class="op">&gt;</span>;
+	<span class="kw">type</span> <span class="ident">MaxAssetsForTransfer</span> <span class="op">=</span> <span class="ident">MaxAssetsForTransfer</span>;
 }
 
 <span class="comment">// For now we only allow to transact in the relay, although this might change in the future</span>
@@ -3373,14 +3551,6 @@
 	<span class="kw">fn</span> <span class="ident">destination</span>(<span class="self">self</span>) -&gt; <span class="ident">MultiLocation</span> {
 		<span class="kw">match</span> <span class="self">self</span> {
 			<span class="ident">Transactors::Relay</span> =&gt; <span class="ident">MultiLocation::parent</span>(),
-		}
-	}
-	<span class="kw">fn</span> <span class="ident">max_transact_weight</span>(<span class="self">self</span>) -&gt; <span class="ident">Weight</span> {
-		<span class="kw">match</span> <span class="self">self</span> {
-			<span class="comment">// Westend is 20,000,000,000</span>
-			<span class="comment">// This needs to take into account the rest of the message</span>
-			<span class="comment">// We use 12,000,000,000 to be safe</span>
-			<span class="ident">Transactors::Relay</span> =&gt; <span class="number">12_000_000_000</span>,
 		}
 	}
 }
@@ -3485,7 +3655,7 @@
 
 <span class="kw">impl</span> <span class="ident">OnInitialize</span><span class="op">&lt;</span><span class="ident">BlockNumber</span><span class="op">&gt;</span> <span class="kw">for</span> <span class="ident">MaintenanceHooks</span> {
 	<span class="kw">fn</span> <span class="ident">on_initialize</span>(<span class="ident">n</span>: <span class="ident">BlockNumber</span>) -&gt; <span class="ident">Weight</span> {
-		<span class="ident">AllPallets::on_initialize</span>(<span class="ident">n</span>)
+		<span class="ident">AllPalletsReversedWithSystemFirst::on_initialize</span>(<span class="ident">n</span>)
 	}
 }
 
@@ -3503,36 +3673,31 @@
 
 <span class="kw">impl</span> <span class="ident">OnRuntimeUpgrade</span> <span class="kw">for</span> <span class="ident">MaintenanceHooks</span> {
 	<span class="kw">fn</span> <span class="ident">on_runtime_upgrade</span>() -&gt; <span class="ident">Weight</span> {
-		<span class="ident">AllPallets::on_runtime_upgrade</span>()
+		<span class="ident">AllPalletsReversedWithSystemFirst::on_runtime_upgrade</span>()
 	}
 	<span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;try-runtime&quot;</span>)]</span>
 	<span class="kw">fn</span> <span class="ident">pre_upgrade</span>() -&gt; <span class="prelude-ty">Result</span><span class="op">&lt;</span>(), <span class="kw-2">&amp;</span><span class="lifetime">&#39;static</span> <span class="ident">str</span><span class="op">&gt;</span> {
-		<span class="ident">AllPallets::pre_upgrade</span>()
+		<span class="ident">AllPalletsReversedWithSystemFirst::pre_upgrade</span>()
 	}
 
 	<span class="attribute">#[<span class="ident">cfg</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;try-runtime&quot;</span>)]</span>
 	<span class="kw">fn</span> <span class="ident">post_upgrade</span>() -&gt; <span class="prelude-ty">Result</span><span class="op">&lt;</span>(), <span class="kw-2">&amp;</span><span class="lifetime">&#39;static</span> <span class="ident">str</span><span class="op">&gt;</span> {
-		<span class="ident">AllPallets::post_upgrade</span>()
+		<span class="ident">AllPalletsReversedWithSystemFirst::post_upgrade</span>()
 	}
 }
 
 <span class="kw">impl</span> <span class="ident">OnFinalize</span><span class="op">&lt;</span><span class="ident">BlockNumber</span><span class="op">&gt;</span> <span class="kw">for</span> <span class="ident">MaintenanceHooks</span> {
 	<span class="kw">fn</span> <span class="ident">on_finalize</span>(<span class="ident">n</span>: <span class="ident">BlockNumber</span>) {
-		<span class="ident">AllPallets::on_finalize</span>(<span class="ident">n</span>)
+		<span class="ident">AllPalletsReversedWithSystemFirst::on_finalize</span>(<span class="ident">n</span>)
 	}
 }
 
 <span class="kw">impl</span> <span class="ident">OffchainWorker</span><span class="op">&lt;</span><span class="ident">BlockNumber</span><span class="op">&gt;</span> <span class="kw">for</span> <span class="ident">MaintenanceHooks</span> {
 	<span class="kw">fn</span> <span class="ident">offchain_worker</span>(<span class="ident">n</span>: <span class="ident">BlockNumber</span>) {
-		<span class="ident">AllPallets::offchain_worker</span>(<span class="ident">n</span>)
+		<span class="ident">AllPalletsReversedWithSystemFirst::offchain_worker</span>(<span class="ident">n</span>)
 	}
 }
 
-<span class="comment">// AllPallets here implies all the specfied pallets in the runtime, except frame_system,</span>
-<span class="comment">// will run the associated hook</span>
-<span class="comment">// AllPallets is simply a nested tuple containing all the pallets except System</span>
-<span class="comment">// In cases where we need only specific pallets to run the hook,</span>
-<span class="comment">// we should state them in nested tuples</span>
 <span class="kw">impl</span> <span class="ident">pallet_maintenance_mode::Config</span> <span class="kw">for</span> <span class="ident">Runtime</span> {
 	<span class="kw">type</span> <span class="ident">Event</span> <span class="op">=</span> <span class="ident">Event</span>;
 	<span class="kw">type</span> <span class="ident">NormalCallFilter</span> <span class="op">=</span> <span class="ident">NormalFilter</span>;
@@ -3543,8 +3708,9 @@
 	<span class="kw">type</span> <span class="ident">MaintenanceDmpHandler</span> <span class="op">=</span> <span class="ident">MaintenanceDmpHandler</span>;
 	<span class="kw">type</span> <span class="ident">NormalXcmpHandler</span> <span class="op">=</span> <span class="ident">XcmpQueue</span>;
 	<span class="kw">type</span> <span class="ident">MaintenanceXcmpHandler</span> <span class="op">=</span> <span class="ident">MaintenanceXcmpHandler</span>;
-	<span class="comment">// We use AllPallets because we dont want to change the hooks in normal operation</span>
-	<span class="kw">type</span> <span class="ident">NormalExecutiveHooks</span> <span class="op">=</span> <span class="ident">AllPallets</span>;
+	<span class="comment">// We use AllPalletsReversedWithSystemFirst because we dont want to change the hooks in normal</span>
+	<span class="comment">// operation</span>
+	<span class="kw">type</span> <span class="ident">NormalExecutiveHooks</span> <span class="op">=</span> <span class="ident">AllPalletsReversedWithSystemFirst</span>;
 	<span class="kw">type</span> <span class="ident">MaitenanceExecutiveHooks</span> <span class="op">=</span> <span class="ident">MaintenanceHooks</span>;
 }
 
@@ -3553,7 +3719,9 @@
 }
 
 <span class="macro">parameter_types!</span> {
-	<span class="kw">pub</span> <span class="ident">IsActive</span>: <span class="ident">bool</span> <span class="op">=</span> <span class="bool-val">true</span>;
+	<span class="comment">// Tells `pallet_base_fee` whether to calculate a new BaseFee `on_finalize` or not.</span>
+	<span class="kw">pub</span> <span class="ident">IsActive</span>: <span class="ident">bool</span> <span class="op">=</span> <span class="bool-val">false</span>;
+	<span class="kw">pub</span> <span class="ident">DefaultBaseFeePerGas</span>: <span class="ident">U256</span> <span class="op">=</span> (<span class="number">1</span> <span class="op">*</span> <span class="ident">currency::GIGAWEI</span> <span class="op">*</span> <span class="ident">currency::SUPPLY_FACTOR</span>).<span class="ident">into</span>();
 }
 
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">BaseFeeThreshold</span>;
@@ -3573,6 +3741,7 @@
 	<span class="kw">type</span> <span class="ident">Event</span> <span class="op">=</span> <span class="ident">Event</span>;
 	<span class="kw">type</span> <span class="ident">Threshold</span> <span class="op">=</span> <span class="ident">BaseFeeThreshold</span>;
 	<span class="kw">type</span> <span class="ident">IsActive</span> <span class="op">=</span> <span class="ident">IsActive</span>;
+	<span class="kw">type</span> <span class="ident">DefaultBaseFeePerGas</span> <span class="op">=</span> <span class="ident">DefaultBaseFeePerGas</span>;
 }
 
 <span class="macro">construct_runtime!</span> {
@@ -3594,7 +3763,7 @@
 		<span class="ident">EVM</span>: <span class="ident">pallet_evm</span>::{<span class="ident">Pallet</span>, <span class="ident">Config</span>, <span class="ident">Call</span>, <span class="ident">Storage</span>, <span class="ident">Event</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span>} <span class="op">=</span> <span class="number">10</span>,
 		<span class="ident">Ethereum</span>: <span class="ident">pallet_ethereum</span>::{<span class="ident">Pallet</span>, <span class="ident">Call</span>, <span class="ident">Storage</span>, <span class="ident">Event</span>, <span class="ident">Origin</span>, <span class="ident">Config</span>} <span class="op">=</span> <span class="number">11</span>,
 		<span class="ident">ParachainStaking</span>: <span class="ident">parachain_staking</span>::{<span class="ident">Pallet</span>, <span class="ident">Call</span>, <span class="ident">Storage</span>, <span class="ident">Event</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span>, <span class="ident">Config</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span>} <span class="op">=</span> <span class="number">12</span>,
-		<span class="ident">Scheduler</span>: <span class="ident">pallet_scheduler</span>::{<span class="ident">Pallet</span>, <span class="ident">Storage</span>, <span class="ident">Config</span>, <span class="ident">Event</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span>, <span class="ident">Call</span>} <span class="op">=</span> <span class="number">13</span>,
+		<span class="ident">Scheduler</span>: <span class="ident">pallet_scheduler</span>::{<span class="ident">Pallet</span>, <span class="ident">Storage</span>, <span class="ident">Event</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span>, <span class="ident">Call</span>} <span class="op">=</span> <span class="number">13</span>,
 		<span class="ident">Democracy</span>: <span class="ident">pallet_democracy</span>::{<span class="ident">Pallet</span>, <span class="ident">Storage</span>, <span class="ident">Config</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span>, <span class="ident">Event</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span>, <span class="ident">Call</span>} <span class="op">=</span> <span class="number">14</span>,
 		<span class="ident">CouncilCollective</span>:
 			<span class="ident">pallet_collective</span>::<span class="op">&lt;</span><span class="ident">Instance1</span><span class="op">&gt;</span>::{<span class="ident">Pallet</span>, <span class="ident">Call</span>, <span class="ident">Storage</span>, <span class="ident">Event</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span>, <span class="ident">Origin</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span>, <span class="ident">Config</span><span class="op">&lt;</span><span class="ident">T</span><span class="op">&gt;</span>} <span class="op">=</span> <span class="number">15</span>,
@@ -3868,10 +4037,11 @@
 	}
 
 	<span class="attribute">#[<span class="ident">test</span>]</span>
-	<span class="comment">// Required migration is parachain_staking::migrations::IncreaseMaxDelegatorsPerCandidate</span>
+	<span class="comment">// Required migration is parachain_staking::migrations::IncreaseMaxTopDelegationsPerCandidate</span>
 	<span class="comment">// Purpose of this test is to remind of required migration if constant is ever changed</span>
 	<span class="kw">fn</span> <span class="ident">updating_maximum_delegators_per_candidate_requires_configuring_required_migration</span>() {
-		<span class="macro">assert_eq!</span>(<span class="ident">MaxDelegatorsPerCandidate::get</span>(), <span class="number">300</span>);
+		<span class="macro">assert_eq!</span>(<span class="ident">MaxTopDelegationsPerCandidate::get</span>(), <span class="number">300</span>);
+		<span class="macro">assert_eq!</span>(<span class="ident">MaxBottomDelegationsPerCandidate::get</span>(), <span class="number">50</span>);
 	}
 }
 </code></pre></div>
